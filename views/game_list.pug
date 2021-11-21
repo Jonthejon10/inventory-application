@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.catalog-container 
+        h1= title
+
+        ul
+            each game in game_list
+                li
+                    a(href=game.url) #{game.name}
+                img(src='/images/'+game.img_name, alt='')
+        a(href='/catalog/create') New game ? Add it here

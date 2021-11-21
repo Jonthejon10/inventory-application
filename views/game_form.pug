@@ -1,0 +1,36 @@
+extends layout 
+
+block content
+    .game-form-container
+        h1= title 
+
+        .form-container
+            form(method='POST' enctype="multipart/form-data" action='')
+                label(for='name') Name: 
+                input#name(type='text', placeholder='Name of the game', name='name', required='true', value=(undefined === game ? '' : game.name) )
+
+                label(for='description') Description: 
+                input#description(type='text', placeholder='Brief description of the game', name='description', required='true', value=(undefined === game ? '' : game.description))
+
+                .genre-radios
+                    label Genre: 
+                    for genre in genres 
+                        div 
+                            input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id, checked=genre.checked)
+                            label(for=genre._id) #{genre.name}
+
+                label(for='price') Price: 
+                input#price(type='number', placeholder='Price of the game', name='price', required='true', value=(undefined === game ? '' : game.price))
+
+                label(for='stock') Stock: 
+                input#stock(type='number', placeholder='How many in stock?', name='stock', required='true', value=(undefined === game ? '' : game.number_in_stock))
+                
+                label(for='image') Image: 
+                input#image(type='file', name="game_cover")
+
+                button.submit-btn(type='submit') Submit
+
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg

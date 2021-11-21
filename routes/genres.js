@@ -4,10 +4,10 @@ var router = express.Router()
 const genre_controller = require('../controllers/genreController')
 
 // GET request for new genre.
-router.get('/genre/create', genre_controller.genre_create_get)
+router.get('/create', genre_controller.genre_create_get)
 
 // POST request for new genre.
-router.post('/genre/create', genre_controller.genre_create_post)
+router.post('/create', genre_controller.genre_create_post)
 
 // GET request to delete genre.
 router.get('/genre/:id/delete', genre_controller.genre_delete_get)

@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+
+    .genre-form-container 
+        h1= title 
+        
+        form(method='POST' action='')
+
+            label(for='name') Name: 
+            input#name(type='text', placeholder='Name of the genre', required='true', name='name', value=(undefined === genre ? '' : genre.name))
+
+            label(for='description') Description: 
+            input#description(type='text', placeholder='Brief description of the genre', name='description', required='true', value=(undefined === genre ? '' : genre.description))
+
+            button.submit-btn(type='submit') Submit
+
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg
+

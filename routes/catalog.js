@@ -4,10 +4,10 @@ var router = express.Router();
 const game_controller = require('../controllers/gameController')
 
 // GET request for new game.
-router.get('/game/create', game_controller.game_create_get)
+router.get('/create', game_controller.game_create_get)
 
 // POST request for new game.
-router.post('/game/create', game_controller.game_create_post)
+router.post('/create', game_controller.game_create_post)
 
 // GET request to delete game.
 router.get('/game/:id/delete', game_controller.game_delete_get)

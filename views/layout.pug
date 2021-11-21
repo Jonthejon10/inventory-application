@@ -2,6 +2,24 @@ doctype html
 html
   head
     title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
+  
   body
-    block content
+    div.container
+      header
+        nav
+          ul
+            li
+              a(href="/") Home
+            li 
+              a(href="/catalog") Browse our catalog
+            li
+              a(href="/genres") Check all genres
+  
+      main
+        block content
+
+      footer
+        block footer
