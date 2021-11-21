@@ -1,12 +1,17 @@
 extends layout
 
 block content
-    div.catalog-container 
+    .content-container.catalog-container 
         h1= title
 
-        ul
+        .game-list-container
             each game in game_list
-                li
-                    a(href=game.url) #{game.name}
-                img(src='/images/'+game.img_name, alt='')
+                .game-list-game
+                        a(href=game.url)
+                        img(src='/images/'+game.img_name, alt='')
+                        h2 #{game.name}
+                        p Price: #{game.price}$
+                        p Stock: #{game.number_in_stock}
+
+
         a(href='/catalog/create') New game ? Add it here

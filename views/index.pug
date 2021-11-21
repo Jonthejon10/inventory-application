@@ -1,4 +1,16 @@
 extends layout
 
 block content
-  h1= title
+  .content-container.index-container 
+    h1 Welcome to our humble game shop !
+
+    p The only place where we have stock for EVERYTHING !
+
+    .chooser-container 
+      
+      .preview-container.game-preview(onclick="window.location.replace('/catalog')")
+        h2 Check out all our games.
+      
+      .preview-container.genre-preview(onclick="window.location.replace('/genres')")
+        h2 Check all the game genres.
+

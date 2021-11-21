@@ -1,12 +1,12 @@
 extends layout 
 
 block content 
-    .genre-container 
+    .content-container.genre-container 
         h1= title
 
         ul 
             each genre in genre_list 
                 li 
                     a(href=genre.url) #{genre.name}
-
-        a(href='/genres/create') New genre ? Add it here
+        .new-genre-container
+            a(href='/genres/create') New genre ? Add it here

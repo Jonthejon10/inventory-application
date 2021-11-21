@@ -2,7 +2,7 @@ extends layout
 
 block content 
 
-    .genre-delete-container
+    .content-container.genre-delete-container
         if games.length
             p #[strong Delete the following games before deleting this genre.]
 
@@ -13,8 +13,10 @@ block content
             button 
                 a(href='/genres/') Go back
         else 
-            h1 Are you sure you want to delete #{genre.name} ? 
+            h1 Are you sure you want to delete #[span #{genre.name}] ? 
 
             form(method='POST' action='')
                 input#genreid(type='hidden',name='genreid', required='true', value=genre._id )
                 button.btn-delete(type='submit') Delete
+                button.btn-delete(type='button')
+                    a(href=genre.url) No, go back

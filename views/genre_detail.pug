@@ -1,14 +1,14 @@
 extends layout 
 
 block content 
-    .genre-detail-container 
+    .content-container.genre-detail-container 
         h1= title
 
         p #{genre.description}
-
-        button 
-            a(href=genre.url+'/update') Update genre
-        button
-            a(href=genre.url+'/delete') Delete genre
-        button 
-            a(href='/genres/') Go back 
+        .genre-detail-buttons
+            button 
+                a(href=genre.url+'/update') Update genre
+            button
+                a(href=genre.url+'/delete') Delete genre
+            button 
+                a(href='/genres/') See all genres 

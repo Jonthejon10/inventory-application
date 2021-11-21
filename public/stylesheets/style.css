@@ -13,6 +13,22 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: cyberpunk;
+  src: url("../fonts/cyberpunk.otf");
+}
+
+@font-face {
+  font-family: prime;
+  src: url("../fonts/prime.ttf");
+}
+
+html {
+  background-color: #222035;
+  color: #fff;
+  font-family: prime;
+}
+
 a {
   text-decoration: none;
 }
@@ -25,6 +41,10 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
 }
 
 nav {
@@ -38,6 +58,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 20px;
 }
 
 nav ul {
@@ -50,5 +71,708 @@ nav ul {
 nav ul li {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+nav ul li a {
+  font-size: 1.3rem;
+  color: #fcee09;
+}
+
+nav ul li a:hover {
+  color: #fc0ff5;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.index-container {
+  text-align: center;
+  margin-top: -200px;
+}
+
+.index-container h1 {
+  font-size: 3.5rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-family: cyberpunk;
+  color: #fcee09;
+}
+
+.index-container p {
+  font-size: 1.3rem;
+  margin-top: 30px;
+}
+
+.index-container .chooser-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 100px;
+  height: 400px;
+}
+
+.index-container .chooser-container .preview-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #868686;
+}
+
+.index-container .chooser-container .preview-container h2 {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  font-size: 2rem;
+  color: #fcee09;
+}
+
+.index-container .chooser-container .preview-container:hover h2 {
+  color: #38fbdb;
+}
+
+.index-container .chooser-container .game-preview {
+  background-image: url("../images/games.jpg");
+}
+
+.index-container .chooser-container .preview-container::after {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, transparent), color-stop(80%, black));
+  background-image: linear-gradient(180deg, transparent 25%, black 80%);
+  content: "";
+}
+
+.index-container .chooser-container .genre-preview {
+  background-image: url("../images/video-games.jpg");
+  margin-left: 10px;
+}
+
+.catalog-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  font-size: 1.3rem;
+}
+
+.catalog-container h1 {
+  font-size: 3.5rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-family: cyberpunk;
+  color: #fcee09;
+}
+
+.catalog-container .game-list-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.catalog-container .game-list-container .game-list-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 400px;
+  height: 500px;
+  padding-bottom: 10px;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.catalog-container .game-list-container .game-list-game h2 {
+  font-size: 2rem;
+  color: #38fbdb;
+  margin-top: 5px;
+}
+
+.catalog-container .game-list-container .game-list-game a:nth-of-type(1) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.catalog-container .game-list-container .game-list-game img {
+  width: 100%;
+}
+
+.catalog-container .game-list-container .game-list-game:hover img {
+  width: 110%;
+}
+
+.catalog-container .game-list-container .game-list-game:hover h2 {
+  font-size: 2.2rem;
+  color: #fcee09;
+}
+
+.catalog-container a {
+  color: #fcee09;
+  font-size: 1.5rem;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.catalog-container a:hover {
+  color: #38fbdb;
+}
+
+.game-detail-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.game-detail-container h1 {
+  font-size: 3.5rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-family: cyberpunk;
+  color: #fcee09;
+}
+
+.game-detail-container .game-detail-img-container {
+  max-width: 1200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.game-detail-container .game-detail-img-container img {
+  width: 100%;
+}
+
+.game-detail-container .game-detail-description-container {
+  margin-top: 30px;
+  max-width: 1200px;
+  font-size: 1.3rem;
+  line-height: 30px;
+  text-align: center;
+}
+
+.game-detail-container .game-detail-description-container a {
+  margin-top: 30px;
+  display: inline-block;
+  color: #38fbdb;
+}
+
+.game-detail-container .game-detail-description-container a:hover {
+  color: #fcee09;
+}
+
+.game-detail-container .game-detail-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+  padding-bottom: 100px;
+}
+
+.game-detail-container .game-detail-buttons button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+}
+
+.game-detail-container .game-detail-buttons button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.game-detail-container .game-detail-buttons button:hover {
+  background-color: #38fbdb;
+}
+
+.game-detail-container .game-detail-buttons button:hover a {
+  color: #fcee09;
+}
+
+.game-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.game-form-container h1 {
+  font-size: 4rem;
+  color: #fcee09;
+}
+
+.game-form-container .form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-form-container .form-container form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.game-form-container .form-container form .genre-radios {
+  margin-top: 20px;
+}
+
+.game-form-container .form-container form button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+  margin-top: 20px;
+}
+
+.game-form-container .form-container form button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.game-form-container .form-container form button:hover {
+  background-color: #38fbdb;
+}
+
+.game-form-container .form-container form button:hover a {
+  color: #fcee09;
+}
+
+.game-form-container .form-container form button:hover {
+  color: #fcee09;
+}
+
+.game-delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.game-delete-container h1 {
+  font-size: 3.5rem;
+}
+
+.game-delete-container span {
+  color: #fcee09;
+}
+
+.game-delete-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+}
+
+.game-delete-container form button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+}
+
+.game-delete-container form button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.game-delete-container form button:hover {
+  background-color: #38fbdb;
+}
+
+.game-delete-container form button:hover a {
+  color: #fcee09;
+}
+
+.genre-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -600px;
+}
+
+.genre-container h1 {
+  font-size: 3.5rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-family: cyberpunk;
+  color: #fcee09;
+}
+
+.genre-container ul {
+  list-style-type: none;
+}
+
+.genre-container ul li {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.genre-container ul li a {
+  color: #38fbdb;
+  font-size: 1.5rem;
+}
+
+.genre-container ul li a:hover {
+  color: #fcee09;
+}
+
+.genre-container a {
+  color: #fcee09;
+  font-size: 1.5rem;
+}
+
+.genre-container a:hover {
+  color: #38fbdb;
+}
+
+.genre-container .new-genre-container {
+  margin-top: 100px;
+}
+
+.genre-detail-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -100px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.genre-detail-container h1 {
+  font-size: 3.5rem;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-family: cyberpunk;
+  color: #fcee09;
+}
+
+.genre-detail-container .genre-detail-buttons {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.genre-detail-container .genre-detail-buttons button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+  width: 300px;
+}
+
+.genre-detail-container .genre-detail-buttons button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.genre-detail-container .genre-detail-buttons button:hover {
+  background-color: #38fbdb;
+}
+
+.genre-detail-container .genre-detail-buttons button:hover a {
+  color: #fcee09;
+}
+
+.genre-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+}
+
+.genre-form-container h1 {
+  font-size: 4rem;
+  color: #fcee09;
+}
+
+.genre-form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.genre-form-container button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+}
+
+.genre-form-container button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.genre-form-container button:hover {
+  background-color: #38fbdb;
+}
+
+.genre-form-container button:hover a {
+  color: #fcee09;
+}
+
+.genre-delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.genre-delete-container p {
+  font-size: 3.5rem;
+}
+
+.genre-delete-container .games-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 50px;
+}
+
+.genre-delete-container .games-list a {
+  font-size: 3rem;
+  color: #fcee09;
+}
+
+.genre-delete-container .games-list a:hover {
+  color: #38fbdb;
+}
+
+.genre-delete-container h1 {
+  font-size: 4rem;
+}
+
+.genre-delete-container span {
+  color: #fcee09;
+}
+
+.genre-delete-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 40px;
+}
+
+.genre-delete-container form button {
+  margin-top: 10px;
+  background-color: #fcee09;
+  cursor: pointer;
+  width: 151px;
+  height: 43px;
+}
+
+.genre-delete-container form button a {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.genre-delete-container form button:hover {
+  background-color: #38fbdb;
+}
+
+.genre-delete-container form button:hover a {
+  color: #fcee09;
+}
+
+footer {
+  width: 100%;
+}
+
+footer .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .footer-container .git-button {
+  cursor: pointer;
+  border: none;
+  background-image: url("../images/github-logo.svg");
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  height: 31px;
+  width: 31px;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  margin-left: 10px;
+}
+
+footer .footer-container .git-button:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 /*# sourceMappingURL=style.css.map */

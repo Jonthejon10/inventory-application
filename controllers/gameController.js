@@ -21,14 +21,19 @@ const upload = multer({storage: fileStorageEngine})
 
 // GAME LIST
 exports.game_list = (req, res, next) => {
-    Game.find({}, 'name genre img_name')
-    .sort({ name: 1 })
-        .populate('genre')
-        .populate('img_name')
-        .exec((err, list_games) => {
-            if (err) { return next(err) }
-            res.render('game_list', {title: 'Games catalog', game_list: list_games})
-        })
+    Game.find({}, 'name genre price number_in_stock img_name')
+		.sort({ name: 1 })
+		.populate('genre')
+		.populate('img_name')
+		.exec((err, list_games) => {
+			if (err) {
+				return next(err)
+			}
+			res.render('game_list', {
+				title: 'Games catalog',
+				game_list: list_games,
+			})
+		})
 }
 
 // INDIVIDUAL GAME DETAIL
@@ -89,7 +94,6 @@ exports.game_create_post = [
     
     // Process request after validation and sanitization
     (req, res, next) => {
-        console.log(req.file.path)
 
         // Extract validation erros from request
         const errors = validationResult(req)
@@ -102,9 +106,13 @@ exports.game_create_post = [
                 genre: req.body.genre,
                 price: req.body.price,
                 number_in_stock: req.body.stock,
-                img_name: req.file.filename
             }
-        )
+		)
+		
+		if (req.file) {
+            game.img_name = req.file.filename
+		}
+		
 
         if (!errors.isEmpty()) {
 			// There are errors. Render form again with sanitized values/error messages.
@@ -288,9 +296,12 @@ exports.game_update_post = [
 			genre: typeof req.body.genre === 'undefined' ? [] : req.body.genre,
 			price: req.body.price,
 			number_in_stock: req.body.stock,
-			img_name: req.file.filename,
 			_id: req.params.id,
 		})
+
+		if (req.file) {
+			game.img_name = req.file.filename
+		}
 
 		if (!errors.isEmpty()) {
 			// There are errors. Render form again with sanitized values/error messages.

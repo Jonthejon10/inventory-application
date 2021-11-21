@@ -3,19 +3,23 @@ extends layout
 block content 
     .game-detail-container 
         h1= title
-
-        img(src='/images/'+game.img_name, alt='')
-        p #{game.description}
+        
+        .game-detail-img-container 
+            img(src='/images/'+game.img_name, alt='')
+        
+        .game-detail-description-container
+            p #{game.description}
      
-        each genre in game.genre 
-            a(href=genre.url) #{genre.name}
+            each genre in game.genre 
+                a(href=genre.url) #{genre.name}
 
-        p #{game.price}$
-        p #{game.number_in_stock}
+            p Price: #{game.price}$
+            p Stock: #{game.number_in_stock}
 
-        button 
-            a(href=game.url+'/update') Update game
-        button
-            a(href=game.url+'/delete') Delete game
-        button 
-            a(href='/catalog/') Go back 
+        .game-detail-buttons
+            button 
+                a(href=game.url+'/update') Update game
+            button
+                a(href=game.url+'/delete') Delete game
+            button 
+                a(href='/catalog/') Go back 
