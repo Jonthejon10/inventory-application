@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,12 +8,16 @@ var logger = require('morgan');
 const indexRouter = require('./routes/index');
 const catalogRouter = require('./routes/catalog');
 const genresRouter = require('./routes/genres');
+const compression = require('compression')
+const helmet = require('helmet')
 
-var app = express();
+const app = express();
+
+app.use(helmet())
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://m001-student:Mysuperpass7@cluster0.amcem.mongodb.net/inventory_application?retryWrites=true&w=majority';
+var mongoDB = process.env.url
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -26,6 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
