@@ -17,6 +17,6 @@ block content
 
             form(method='POST' action='')
                 input#genreid(type='hidden',name='genreid', required='true', value=genre._id )
-                button.btn-delete(type='submit') Delete
-                button.btn-delete(type='button')
+                button(type='submit') Delete
+                button(type='button')
                     a(href=genre.url) No, go back

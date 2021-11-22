@@ -117,7 +117,7 @@ nav {
 // HOME PAGE
 .index-container {
     text-align: center;
-    margin-top: -200px;
+    padding-bottom: 250px;
 
     h1 {
         @include page-header;
@@ -361,6 +361,7 @@ nav {
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
+    text-align: initial;
 
     h1 {
         font-size: 4rem;
@@ -427,8 +428,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -600px;
-
+    padding-bottom: 100px;
+    
     h1 {
         @include page-header;
     }
@@ -491,9 +492,9 @@ nav {
 .genre-form-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    text-align: initial;
 
     h1 {
         font-size: 4rem;
@@ -504,6 +505,10 @@ nav {
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        input {
+            margin-bottom: 20px;
+        }
     }
 
     button {
@@ -545,13 +550,14 @@ nav {
         color: $yellow-punk;
     }
 
+    button {
+        @include basic-btn;
+    }
+    
     form {
         display: flex;
         flex-direction: column;
         margin-top: 40px;
-        button {
-            @include basic-btn;
-        }
     }
 }
 
