@@ -1,4 +1,3 @@
-console.log('Database_URL', process.env.DATABASE_URL)
 require('dotenv').config()
 var createError = require('http-errors')
 var express = require('express')
