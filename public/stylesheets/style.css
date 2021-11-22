@@ -87,6 +87,7 @@ nav ul li a:hover {
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  text-align: center;
 }
 
 .index-container {
@@ -97,9 +98,15 @@ nav ul li a:hover {
 .index-container h1 {
   font-size: 3.5rem;
   padding-bottom: 50px;
-  padding-top: 50px;
+  margin-top: 100px;
   font-family: cyberpunk;
   color: #fcee09;
+}
+
+@media only screen and (max-width: 530px) {
+  .index-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .index-container p {
@@ -128,6 +135,7 @@ nav ul li a:hover {
   cursor: pointer;
   padding: 10px;
   border: 1px solid #868686;
+  z-index: 10;
 }
 
 .index-container .chooser-container .preview-container h2 {
@@ -136,6 +144,15 @@ nav ul li a:hover {
   z-index: 100;
   font-size: 2rem;
   color: #fcee09;
+}
+
+.index-container .chooser-container .preview-container a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 110;
 }
 
 .index-container .chooser-container .preview-container:hover h2 {
@@ -155,11 +172,41 @@ nav ul li a:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, transparent), color-stop(80%, black));
   background-image: linear-gradient(180deg, transparent 25%, black 80%);
   content: "";
+  z-index: 1;
 }
 
 .index-container .chooser-container .genre-preview {
   background-image: url("../images/video-games.jpg");
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .index-container .chooser-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .index-container .chooser-container .preview-container {
+    height: 50%;
+    width: 100%;
+  }
+  .index-container .chooser-container .genre-preview {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .container nav {
+    text-align: center;
+  }
+  .container nav ul li a {
+    font-size: 1.2rem;
+  }
 }
 
 .catalog-container {
@@ -180,9 +227,15 @@ nav ul li a:hover {
 .catalog-container h1 {
   font-size: 3.5rem;
   padding-bottom: 50px;
-  padding-top: 50px;
+  margin-top: 100px;
   font-family: cyberpunk;
   color: #fcee09;
+}
+
+@media only screen and (max-width: 530px) {
+  .catalog-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .catalog-container .game-list-container {
@@ -280,9 +333,15 @@ nav ul li a:hover {
 .game-detail-container h1 {
   font-size: 3.5rem;
   padding-bottom: 50px;
-  padding-top: 50px;
+  margin-top: 100px;
   font-family: cyberpunk;
   color: #fcee09;
+}
+
+@media only screen and (max-width: 530px) {
+  .game-detail-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .game-detail-container .game-detail-img-container {
@@ -500,9 +559,15 @@ nav ul li a:hover {
 .genre-container h1 {
   font-size: 3.5rem;
   padding-bottom: 50px;
-  padding-top: 50px;
+  margin-top: 100px;
   font-family: cyberpunk;
   color: #fcee09;
+}
+
+@media only screen and (max-width: 530px) {
+  .genre-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .genre-container ul {
@@ -558,9 +623,15 @@ nav ul li a:hover {
 .genre-detail-container h1 {
   font-size: 3.5rem;
   padding-bottom: 50px;
-  padding-top: 50px;
+  margin-top: 100px;
   font-family: cyberpunk;
   color: #fcee09;
+}
+
+@media only screen and (max-width: 530px) {
+  .genre-detail-container h1 {
+    font-size: 3rem;
+  }
 }
 
 .genre-detail-container .genre-detail-buttons {

@@ -8,9 +8,11 @@ block content
 
     .chooser-container 
       
-      .preview-container.game-preview(onclick="window.location.replace('/catalog')")
+      .preview-container.game-preview
+        a(href='/catalog/')
         h2 Check out all our games.
       
-      .preview-container.genre-preview(onclick="window.location.replace('/genres')")
+      .preview-container.genre-preview
+        a(href='/genres/')
         h2 Check all the game genres.
 

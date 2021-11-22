@@ -53,9 +53,13 @@ $yellow-punk: #fcee09;
 @mixin page-header {
     font-size: 3.5rem;
     padding-bottom: 50px;
-    padding-top: 50px;
+    margin-top: 100px;
     font-family: cyberpunk;
     color: $yellow-punk;
+
+    @media only screen and (max-width: 530px) {
+        font-size: 3rem;
+    }
 }
 
 html {
@@ -107,6 +111,7 @@ nav {
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
+    text-align: center;
 }
 
 // HOME PAGE
@@ -139,13 +144,23 @@ nav {
             cursor: pointer;
             padding: 10px;
             border: 1px solid rgb(134, 134, 134);
-
+            z-index: 10;
+            
             h2 {
                 position: absolute;
                 bottom: 0;
                 z-index: 100;
                 font-size: 2rem;
                 color: $yellow-punk;
+            }
+
+            a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 110;
             }
 
             &:hover {
@@ -167,6 +182,7 @@ nav {
             left: -1px;
             background-image: linear-gradient(180deg,transparent 25%,rgb(0, 0, 0) 80%);
             content: "";
+            z-index: 1;
         }
 
         .genre-preview {
@@ -175,6 +191,43 @@ nav {
         }
     }
 }
+
+// MEDIA QUERIES
+@media only screen and (max-width: 750px) {
+    .index-container {
+        .chooser-container {
+            flex-direction: column;
+            align-items: center;
+    
+            .preview-container {
+                height: 50%;
+                width: 100%;
+            }
+            
+            .genre-preview {
+                margin-top: 10px;
+                margin-left: 0px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .container {
+        nav {
+            text-align: center;
+            ul {
+                li {
+                    a {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 
 // CATALOG PAGE
 .catalog-container {
@@ -529,3 +582,4 @@ footer {
         }
     }
 }
+
